@@ -1,3 +1,3 @@
-Delila Haliloviæ
+Delila Halilovic
 17015
-Web stranica koja služi poboljšanju psihièkog i fizièkog zdravlja. 
+Web stranica koja sluzi poboljsanju psihickog i fizickog zdravlja. 
