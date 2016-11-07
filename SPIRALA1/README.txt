@@ -1,4 +1,4 @@
-I  Urađeno je:
+﻿I  Urađeno je:
 -Skice za svaku od podstranica u Paint-u, te skice za podstranice prilagođene za mobilni uređaj. (5 podstranica)
 -Sve stranice su responzivne i imaju grid-view izgled.
 -Napravljen je izgled za mobilne uređaje, pri tom je korišten media query-e.
@@ -10,6 +10,6 @@ II  Sve što je zahtjevano u ovoj spirali je urađeno.
 
 III, IV  Nema bug-ova koje sam primijetila, a da nisam popravila.
 
-V  - Lista fajlova:
+V   Lista fajlova:
 	SKICE-Skice za svaku od podstranica u Paint-u, te skice za podstranice prilagođene za mobilni uređaj.
 	projekat-Sve stranice (html), stilovi za stranice (css), slike korištene za stranice.
