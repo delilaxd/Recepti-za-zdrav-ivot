@@ -3,6 +3,15 @@
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 
 }
+
+@media only screen and (max-width: 1300px)  {
+	#menu li, #menu li a 
+	{
+		width:100%;
+		margin-bottom: 20px;
+	}
+}
+
 @media only screen and (max-width: 900px)  {
 	#menu li, #menu li a 
 	{

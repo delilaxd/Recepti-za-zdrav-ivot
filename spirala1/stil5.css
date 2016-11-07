@@ -3,6 +3,14 @@
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 
 }
+
+@media only screen and (max-width: 1300px)  {
+	#menu li, #menu li a 
+	{
+		width:100%;
+		margin-bottom: 20px;
+	}
+}
 @media only screen and (max-width: 900px)  {
 	#menu li, #menu li a 
 	{
@@ -153,3 +161,9 @@ h4
 {
 	padding-top:10px;
 }
+
+#fpitanje input[type="text"], #fpitanje input[type="submit"]
+{
+	border: 1px solid #3097D1;
+	border-radius: 10px;
+} 
