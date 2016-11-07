@@ -1,0 +1,43 @@
+I-Šta je urađeno?
+
+a)Skice - urađene
+
+b)Stranice responzivne i imaju grid view izgled-urađeno
+
+c)Izgled i skice za mobilne uređaje-urađene
+
+d)Implementirati forme-urađeno
+
+e)Implementirati meni web stranice-urađeno
+
+f)Izgled stranice treba biti konzistentan, bez glitcheva, elementi na stranici trebaju biti poravnati-urađeno
+
+
+
+II-Šta nije urađeno?
+
+Sve je urađeno.
+
+III-Bug-ovi koje ste primijetili ali niste stigli ispraviti, a znate rješenje
+
+-
+
+IV-Bug-ovi koje ste primijetili ali ne znate rješenje
+
+-
+
+V-Lista fajlova u formatu NAZIVFAJLA - Opis u vidu jedne rečenice šta se u fajlu nalazi
+
+Folder Skice-nalaze se skice stranica kao i skice za mobilnu verziju stranica.
+
+Folder Slike-nalaze se slike koje su korištene na stranicama.
+
+Naslovna.html-naslovna stranica.
+
+ONama.html-sadrži osnovne informacije o Špajzu
+
+Proizvodi.html-sadrži listu proizvoda sa slikama
+
+Kontakt.html-sadrži formu za kontaktiranje,tj. slanje poruke
+
+Prijava.html-sadrži forme za prijavu i registraciju na sajt
