@@ -138,3 +138,8 @@ h1
 #menu li:last-child {
     border-right: none;
 }
+#p1
+{
+	width:100%;
+	height:500px;
+}
