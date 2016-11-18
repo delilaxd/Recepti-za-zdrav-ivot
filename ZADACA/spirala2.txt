@@ -1,0 +1,27 @@
+
+I  - Šta je uraðeno:
+a) SVA polja formi trebaju imaju JavaScript validaciju, nevalidan unos onemoguæava submit i ispisuje odgovarajuæu poruku koja treba biti dovoljna 
+korisniku da može ispraviti svoju grešku, greska se prikazuje ispod nevalidnog polja.
+b) Koristeæi JavaScript implementirano je:
+- Meni u vidu stabla
+- Galerija slika sa opcijom da se na klik slika raširi preko cijelog ekrana, a na escape da se vrati pogled nazad na galeriju
+c) Koristeæi Ajax napravljeno da se podstranice uèitavaju bez reload-a cijele stranice, veæ se samo sadržaj podstranice mijenja
+ 
+II  - Šta nije uraðeno:
+Sve trazeno je uradjeno.
+III - Bug-ovi koje ste primijetili ali niste stigli ispraviti, a znate rješenje: /
+IV  - Bug-ovi koje ste primijetili ali ne znate rješenje: /
+V  - Lista fajlova u formatu NAZIVFAJLA - Opis u vidu jedne reèenice šta se u fajlu nalazi:
+-folder ZADACA u njemu je folder projekat te u njemu su svi html-ovi, slike, js-ovi, css-ovi
+-index.html je pocetna stranica
+-home.html se prikaze kad se klikne na pocetna i na toj stranici je meni u vidu stabla i validirane su forme
+-hrana.html se prikazuje kad se klikne na hrana u meniju
+-fitness.html se prikazuje kad se klikne na fitness u meniju
+-psiha.html se prikazuje kad se klikne na psihicko zdravlje u meniju
+-pitanja.html se prikazuje kad se klikne na pitanja i odgovori u meniju i tu je validirana forma
+-galerijaa.html se prikazuje kad se klikne na galerija u meniju i kada se klikne na sliku ona se radiri preko cijelog ekrana i na escape se vrati pogled nazad
+-_styles.css je stil za meni u vidu stabla
+-stil1.css, stil2.css, stil3.css, stil4.css, stil5.css,stilGalerija.css su stilovi za index.htmml i home.html, hrana.html, fitness.html,psiha.html,pitanja.html,galerijaa.html
+-glavna.js javascript file za index.html u njemu se pomocu Ajax-a napravilo da se podstranice uèitavaju bez reload-a cijele stranice, veæ se samo sadržaj podstranice mijenja
+-funkcije.js javascript file za validaciju formi
+-javaGalerija.js javascript file za galeriju, tu je napravljeno da se na klik slika raširi preko cijelog ekrana, a na escape da se vrati pogled nazad na galeriju
