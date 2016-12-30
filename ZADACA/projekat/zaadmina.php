@@ -26,50 +26,38 @@
 
 
 if(isset($_GET['action'])){
+	$idx=0;
+	$i=0;
 	$recepti=simplexml_load_file('recepti.xml');
 	$id=$_GET['id'];
-	$index=0;
-	$i=0;
+
 	foreach($recepti->recept as $recept){
 		if($recept['id']==$id){
-			$index=$i;
+			$idx=$i;
 			break;
-		}
-		$i++;
+		}$i++;
 	}
-	unset($recepti->recept[$index]);
+	unset($recepti->recept[$idx]);
 	file_put_contents('recepti.xml', $recepti->asXML());
 	}
-
-	//ucitavanje iz xml-a
-	 
-
-    if (file_exists('recepti.xml')) 
-           {
-           	$recepti=simplexml_load_file('recepti.xml');
-       $f = fopen('recepti.csv', 'w');
-       createCsv($recepti, $f);
-       fclose($f);
+    if (file_exists('recepti.xml')) { $recepti=simplexml_load_file('recepti.xml');
+      $file = fopen('recepti.csv', 'w');
+      createCsv($recepti, $file);
+      fclose($file);
     }
 
-    function createCsv($recepti,$f)
+    function createCsv($recepti,$file)
     {
 
         foreach ($recepti->children() as $item) 
         {
-
-           $hasChild = (count($item->children()) > 0)?true:false;
-
-        if( ! $hasChild)
-        {
-           $put_arr = array($item->getName(),$item); 
-           fputcsv($f, $put_arr ,',','"');
-
+$hasChild = (count($item->children()) > 0)?true:false;
+if( ! $hasChild){
+         $put_arr = array($item->getName(),$item); 
+         fputcsv($file, $put_arr ,',','"');
         }
-        else
-        {
-         createCsv($item, $f);
-        }
+        else createCsv($item, $file);
+        
      }
 
     }
@@ -97,10 +85,8 @@ echo '<br>Lista proizvoda: ';?>
 <a href="recepti.csv" style="color:#DE7C7C" download><b>Spisak recepata[download]</b></a>
 <br><br>
 <form action="zaadmina.php"  method="post">
-<table cellpading="2" cellspacing="2" border="1">
-
-
-       <tr>
+<table cellpading="1" cellspacing="2" border="1">
+<tr>
 	       <th>Id</th>
 		   <th>Ime</th>
 		   <th>Ocjena</th>
@@ -109,8 +95,7 @@ echo '<br>Lista proizvoda: ';?>
 	   <tr>
 	   
 	   <?php
-	
-	      foreach ($recepti->recept as $recept){ ?>
+	foreach ($recepti->recept as $recept){ ?>
 		   <tr>
 		       <td><?php echo $recept['id'];?></td>
 			   <td><?php echo $recept->name;?></td>

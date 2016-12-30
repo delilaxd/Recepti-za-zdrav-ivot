@@ -26,7 +26,7 @@
 <br><br><br><br>
 
 <?php
-$output='';
+$izlaz='';
 	if(isset($_POST['searchbtt'])){
 		$searched = htmlEntities($_POST['search'], ENT_QUOTES);
 		
@@ -36,14 +36,9 @@ $output='';
 		$o=$k->ocjena;
 		$ime=$k->name;
 
-		if($searched=='')
-		{
-			$output.='<div>'.$o.' '.$ime.'<div>';
-		}
-		elseif(strpos(strtolower($o), strtolower($searched))!==false || strpos(strtolower($ime),strtolower($searched))!==false)
-		{
-			$output.='<div>'.$o.' '.$ime.'<div>';
-		}
+		if($searched=='')$izlaz.='<div>'.$o.' '.$ime.'<div>';	
+		elseif(strpos($o, $searched)!==false || strpos($ime,$searched)!==false)$izlaz.='<div>'.$o.' '.$ime.'<div>';
+		
 	}
 }
 ?>
@@ -219,11 +214,18 @@ if(isset($_REQUEST['logout'])){
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	
 	<script type="text/javascript">
-	
+	function prikaz()
+	{
+		var tekst = $("input[name='search']").val();
+		$.post("s.php",{searchVal:tekst},function(output){
+		$("#output").html(output);
+	}
+	);
+	}
 	function q()
 	{
-		var searchTxt = $("input[name='search']").val();
-		$.post("s.php",{searchVal: searchTxt},function(output){
+		var tekst = $("input[name='search']").val();
+		$.post("s.php",{searchVal: tekst},function(output){
 		$("#output").html(output);
 	}
 	);
@@ -233,13 +235,7 @@ if(isset($_REQUEST['logout'])){
 	
 	<script type="text/javascript">
 	
-	function prikaz(){
-		var searchTxt = $("input[name='search']").val();
-		$.post("ss.php",{searchVal: searchTxt},function(output){
-		$("#output").html(output);
-	}
-	);
-	}
+	
 	
 	</script>
 	

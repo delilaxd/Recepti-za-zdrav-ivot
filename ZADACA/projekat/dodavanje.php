@@ -11,22 +11,17 @@ if(isset($_POST['submitSacuvaj'])){
 ?>
 
 <form method="post">
-    <table cellpading="2" cellspacing="2">
-	   <tr>
-	         <td>Id</td>
-			 <td><input type="text" name="id"></td>
-	   </tr>
-	   <tr>
-	         <td>Ime</td>
-			 <td><input type="text" name="name"></td>
-	   </tr>
-	   <tr>
-	         <td>Ocjena</td>
-			 <td><input type="text" name="ocjena"></td>
-	   </tr>
-	    <tr>
-	         <td>&nbsp;</td>
-			 <td><input type="submit" name="submitSacuvaj" value="Sačuvaj"></td>
-	   </tr>
-	
-	</table>
+<table cellpading="1" cellspacing="3">
+<tr>
+    <td>Id</td> <td><input type="text" name="id"></td>
+</tr>
+<tr>
+	 <td>Ime</td><td><input type="text" name="name"></td>
+</tr>
+<tr>
+	 <td>Ocjena</td><td><input type="text" name="ocjena"></td>
+</tr>
+<tr>
+	<td>&nbsp;</td><td><input type="submit" name="submitSacuvaj" value="Sačuvaj"></td>
+</tr>	
+</table>
