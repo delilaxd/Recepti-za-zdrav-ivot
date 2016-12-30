@@ -1,18 +1,18 @@
 
 
 1.) [4 boda]
-Koristeæi PHP napravljena serializacija svih podataka u XML fajl/fajlove. 
- Omoguæen je unos, izmjena, prikazivanje i brisanje podataka za admina. 
-Omogoguæena je prijava za admina (username: Monte, password: pas, u xmlu admin.xml, nakon sto je ulogovan admin prikazuje se dugme za logout, i dugme koje 
+KoristeÄ‡i PHP napravljena serializacija svih podataka u XML fajl/fajlove. 
+ OmoguÄ‡en je unos, izmjena(kod recepti.xml svi podaci se mogu promijenit osim id-a, id ostaje isti), prikazivanje i brisanje podataka za admina. 
+OmogoguÄ‡ena je prijava za admina (username: Monte, password: pas, u xmlu admin.xml, nakon sto je ulogovan admin prikazuje se dugme za logout, i dugme koje 
 vodi na stranicu zaadmina.php, i na toj stranici je omoguceno dodavanje, izmjena, brisanje i prikazivanje recepata (iz recepti.xml).
 Podaci koji se unose u XML fajl nisu validirani u PHP-u. 
 2.) [1 bod]
-Kada se admin prijavi i klikne na dugme koje vodi na stranicu zaadmina.php na toj stranici je omoguæen adminu download podataka 
+Kada se admin prijavi i klikne na dugme koje vodi na stranicu zaadmina.php na toj stranici je omoguÄ‡en adminu download podataka 
 (recepti) u obliku csv fajla.Podaci su iz XML-a. 
 3.) [2 boda]
-Opcija generisanja izvještaja u obliku pdf fajla je omoguæena na stranici pitanja.php gdje se u izvjestaju nalaze do sada poslana pitanja. (iz pitanja.xml)  
+Opcija generisanja izvjeÅ¡taja u obliku pdf fajla je omoguÄ‡ena na stranici pitanja.php gdje se u izvjestaju nalaze do sada poslana pitanja. (iz pitanja.xml)  
 4.) [3 boda]
-Napravlljena je opcija pretrage podataka sa prijedlozima. Dok korisnik upisuje vrijednost pretrage treba mu se prikazivati do deset najsliènijih stavki.
+Napravlljena je opcija pretrage podataka sa prijedlozima. Dok korisnik upisuje vrijednost pretrage treba mu se prikazivati do deset najsliÄnijih stavki.
 Pretraga treba biti za min 2 polja istovremeno. Ta dva polja su ime i ocjena recepta. A pretrazuju se svi objekti koji sadrze znakove koji su uneseni i to bilo gdje unutar rijeci.
 Pretraga je iz recepti.xml.
 Nisam primijetila nikakve bug-ove.
