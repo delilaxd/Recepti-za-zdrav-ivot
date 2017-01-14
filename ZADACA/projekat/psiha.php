@@ -8,7 +8,7 @@
 				<h1>RECEPTI ZA ZDRAV ZIVOT</h1>
 				<div id="menu">
 				<ul>
-					<li><a href="home.php">Pocetna</a></li>
+					<li><a href="index.php">Pocetna</a></li>
 					<li><a href="hrana.php">Hrana</a></li>
 					<li><a href="fitness.php">Fitness</a></li>
 					<li><a href="psiha.php">Psihicko zdravlje</a></li>

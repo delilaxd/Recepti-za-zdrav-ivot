@@ -12,7 +12,7 @@
 				<h1>RECEPTI ZA ZDRAV ZIVOT</h1>
 				<div id="menu">
 				<ul>
-					<li><a href="home.php">Pocetna</a></li>
+					<li><a href="index.php">Pocetna</a></li>
 					<li><a href="hrana.php">Hrana</a></li>
 					<li><a href="fitness.php">Fitness</a></li>
 					<li><a href="psiha.php">Psihicko zdravlje</a></li>
@@ -65,7 +65,7 @@ if(isset($_REQUEST['login'])){
 				session_start();
 			$_SESSION['username'] = $username;
 			$_SESSION['password'] = $password;
-			print "<form action='home.php' method='POST'><input name='logout' type='submit' value='Logout' id='login'></form>";
+			print "<form action='index.php' method='POST'><input name='logout' type='submit' value='Logout' id='login'></form>";
 			print "<p id='login'>".$username." je logovan</p>";
 			print "<form action='zaadmina.php' method='POST'><input name='receptiadmin' type='submit' value='Pregled/izmjena liste recepata i download kao csv' id='receptiadmin'></form>";
 		}
@@ -73,7 +73,7 @@ if(isset($_REQUEST['login'])){
 	
 }
 if(isset($_SESSION['username'], $_SESSION['password']) == false){
-	print "<form action='home.php' method='POST'><input type='text' name='username' placeholder='username' value='' id='login'><input type='password' name='password' placeholder='password' value='' id='login'><input name='login' type='submit' value='Login' id='login'>  </form>";
+	print "<form action='index.php' method='POST'><input type='text' name='username' placeholder='username' value='' id='login'><input type='password' name='password' placeholder='password' value='' id='login'><input name='login' type='submit' value='Login' id='login'>  </form>";
 }
 if(isset($_REQUEST['logout'])){
 	if (!isset($_SESSION))
@@ -241,7 +241,7 @@ if(isset($_REQUEST['logout'])){
 	
 	</script>
 
-<form action="home.php" method="post">
+<form action="index.php" method="post">
 
 	<input type="text" name="search" placeholder="Pretrazi recepte..." onkeyup="q();" />
 	<input type="button" name="searchbtt" value="Trazi" onclick="prikaz();" />
