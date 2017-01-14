@@ -1,0 +1,9 @@
+a) Napravite MySQL bazu sa min tri povezane tabele URAÐENO 
++ Dodajte nove forme po potrebi
+b) Napraviti PHP skriptu koja æe sve podatke iz XML prebaciti u bazu podataka, 
+neka se ova skripta poziva na klik dugmeta kojeg može vidjeti samo administrator,
+ova skripta treba da ubaci samo podatke iz XML-a koji se ne nalaze u bazi URAÐENO
+c) Prepravite vaše PHP skripte tako da se podaci èuvaju i kupe iz baze podataka umjesto iz XML-a URAÐENO
+d) Napravite hosting vaše stranice na OpenShift, link na stranicu navedite u ReadMe fajlu NIJE URAÐENO
+e) Napravite jednu metodu REST web servisa koja vraæa podatke u obliku JSON-a URAÐENO
+f) Testirajte web servis koristeæi POSTMAN i priložite odgovarajuæi izvještaj (screenshot 3-4 razlièita sluèaja upotreba) URAÐENO

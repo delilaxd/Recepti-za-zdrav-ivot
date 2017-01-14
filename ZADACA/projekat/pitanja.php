@@ -22,23 +22,48 @@
 				
 </div>
 
-<?php
-if(isset($_POST['submitPosalji'])){
-	$pitanja=simplexml_load_file('pitanja.xml');
-	$pitanje=$pitanja->addChild('pitanje');
-	
-	$pitanje->addChild('poruka',$_POST['poruka']);
 
-	file_put_contents('pitanja.xml', $pitanja->asXML());
+<?php
+
+
+if(isset($_POST['submitPosalji'])){
+	$servername = "localhost";
+$username = "delilaxd";
+$password = "pas";
+$dbname = "receptizazdravzivot";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+ 
+
+  $komentar = $_POST['poruka'];
+  
+$sql = "INSERT INTO pitanja (poruka,recept)
+VALUES ('$komentar', 0)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
 	header('location: pitanja.php');
 }
+	
+
+
 ?>
 <div class="container" >
 
 	<div class="zaglavlje">
 	<img id="naslovna_slika" src="pit.jpg" alt="Slika pitanja">
 	<h1>Pitanja i odgovori</h1>
-	<a style="color:white"href="pfd.php">Pitanja[PDF]</a>
+	<!--<a style="color:white"href="pfd.php">Pitanja[PDF]</a>-->
 	</div>
 	
 	

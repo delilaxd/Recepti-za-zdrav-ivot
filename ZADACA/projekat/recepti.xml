@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <recepti>
 
-<recept id="4"><name>Boemm</name><ocjena>7</ocjena></recept><recept id="6"><name>Grah</name><ocjena>10</ocjena></recept><recept id="1"><name>Sarma</name><ocjena>9</ocjena></recept><recept id="5"><name>Monte torta</name><ocjena>2</ocjena></recept></recepti>
+<recept><name>Boemm</name><ocjena>7</ocjena></recept>
+<recept><name>Grah</name><ocjena>10</ocjena></recept>
+<recept><name>Sarma</name><ocjena>9</ocjena></recept>
+<recept><name>Monte torta</name><ocjena>2</ocjena></recept></recepti>

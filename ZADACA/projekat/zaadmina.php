@@ -1,3 +1,7 @@
+ <?php 
+ $link=mysqli_connect("localhost","delilaxd","pas");
+ mysqli_select_db($link,"receptizazdravzivot");
+ ?>
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +27,7 @@
 
 <body >
 <?php
+/*
 
 
 if(isset($_GET['action'])){
@@ -60,8 +65,35 @@ if( ! $hasChild){
         
      }
 
+    }*/
+    //ucitavanje iz baze u csv
+	// mysql database connection details
+    $host = "localhost";
+    $username = "delilaxd";
+    $password = "pas";
+    $dbname = "receptizazdravzivot";
+
+    // open connection to mysql database
+    $connection = mysqli_connect($host, $username, $password, $dbname) or die("Connection Error " . mysqli_error($connection));
+    
+    // fetch mysql table rows
+    $sql = "select * from recepti";
+    $result = mysqli_query($connection, $sql) or die("Selection Error " . mysqli_error($connection));
+
+    $fp = fopen('recepti.csv', 'w');
+
+    while($row = mysqli_fetch_assoc($result))
+    {
+        fputcsv($fp, $row);
     }
+    
+    fclose($fp);
+
+    //close the db connection
+    mysqli_close($connection);
 ?>
+
+
 <div class="container" >
 
 	<div class="zaglavlje">
@@ -73,18 +105,57 @@ if( ! $hasChild){
 
 	<div class="glavni">
 		
-<?php $recepti=simplexml_load_file('recepti.xml');
 
 
 
-echo 'Broj proizvoda: '.count($recepti);
+<?php
+
+
+if(isset($_POST['submitSacuvaj'])){
+	$host = "localhost";
+    $username = "delilaxd";
+    $password = "pas";
+    $dbname = "receptizazdravzivot";
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+ $name = $_POST['name'];
+  $o = $_POST['ocjena'];
+
+$sql = "INSERT INTO recepti (id,ime,ocjena,admin)
+VALUES (1,'$name', '$o', 0)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+	header('location: zaadmina.php');
+	
+	
+}
+ 
+
+?>
+
+
+
+<?php ;
 echo '<br>Lista proizvoda: ';?>
 
 
 <br>
-<a href="recepti.csv" style="color:#DE7C7C" download><b>Spisak recepata[download]</b></a>
+
 <br><br>
-<form action="zaadmina.php"  method="post">
+
+
 <table cellpading="1" cellspacing="2" border="1">
 <tr>
 	       <th>Id</th>
@@ -94,19 +165,22 @@ echo '<br>Lista proizvoda: ';?>
 	   </tr>
 	   <tr>
 	   
-	   <?php
-	foreach ($recepti->recept as $recept){ ?>
-		   <tr>
-		       <td><?php echo $recept['id'];?></td>
-			   <td><?php echo $recept->name;?></td>
-			   <td><?php echo $recept->ocjena;?></td>
-			   <td align="center">
-			   <a href="editovanje.php?id=<?php echo $recept['id']; ?>">Edit</a> | 
-			   <a href="zaadmina.php?action=delete&id=<?php echo $recept['id'];?>"
-				 onclick="return confirm('Jeste li sigurni?')">Delete</a></td>
-			   
-		   </tr>
-		   <?php } ?>
+	  
+
+		   <?php
+	   $res=mysqli_query($link,"select * from recepti");
+	   while($row=mysqli_fetch_array($res))
+	   {
+		   echo "<tr>";
+		      echo "<td>"; echo $row["id"]; echo "</td>";
+		   echo "<td>"; echo $row["name"]; echo "</td>";
+		   echo "<td>"; echo $row["ocjena"]; echo "</td>";
+		   
+		 echo "<td><a href='editovanje.php?id=".$row["id"]."' >Edit</a></td>";
+         echo "<td><a href='delete.php?id=".$row["id"]."' >Delete</a></td>";
+		   echo "</tr>";
+	   }
+	   ?>
 
 
 
@@ -115,8 +189,9 @@ echo '<br>Lista proizvoda: ';?>
 	   
 		   
 </table>
-</form>
+
 <a href="dodavanje.php">Dodaj novi proizvod</a>
+
 	
 	
 </div>

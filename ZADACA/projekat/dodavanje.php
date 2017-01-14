@@ -1,13 +1,37 @@
 <?php
+
+
 if(isset($_POST['submitSacuvaj'])){
-	$recepti=simplexml_load_file('recepti.xml');
-	$recept=$recepti->addChild('recept');
-	$recept->addAttribute('id',$_POST['id']);
-	$recept->addChild('name',$_POST['name']);
-	$recept->addChild('ocjena',$_POST['ocjena']);
-	file_put_contents('recepti.xml', $recepti->asXML());
-	header('location: zaadmina.php');
+	$servername = "localhost";
+$username = "delilaxd";
+$password = "pas";
+$dbname = "receptizazdravzivot";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+ $name = $_POST['name'];
+  $o = $_POST['ocjena'];
+
+$sql = "INSERT INTO recepti (id,name,ocjena,admin)
+VALUES (1,'$name', '$o', 0)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+$conn->close();
+	header('location: zaadmina.php');
+	
+	
+}
+ 
+
 ?>
 
 <form method="post">

@@ -68,6 +68,7 @@ if(isset($_REQUEST['login'])){
 			print "<form action='index.php' method='POST'><input name='logout' type='submit' value='Logout' id='login'></form>";
 			print "<p id='login'>".$username." je logovan</p>";
 			print "<form action='zaadmina.php' method='POST'><input name='receptiadmin' type='submit' value='Pregled/izmjena liste recepata i download kao csv' id='receptiadmin'></form>";
+			print "<form action='izxmlaubazu.php' ><input name='xmlbaza' type='submit' value='Iz xmla u bazu' id='xmlbaza'></form>";
 		}
 	}
 	
@@ -268,8 +269,15 @@ if(isset($_REQUEST['logout'])){
 		<p>	Ova web stranica sadrzi informacije i savjete o zdravom nacinu zivota, 
 		kojima Vas zelimo potaknuti da budete aktivniji u ocuvanju i unaprjedjenju 
 		vlastitog zdravlja Mi brinemo o Vasem psihickom i fizickom zdravlju.<br> </p>
+
+		<form method="get" action="uJSON.php">
+	
+	<p>Nesto <input type="text" name="nesto" ></p>
+	</form>
 		</div>
 	</div>
+
+
 	
 	
 </div>
